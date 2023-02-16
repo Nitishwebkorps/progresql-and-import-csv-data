@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+<div class="book-index-grid d-flex  flex-wrap ">
+<% @posts.each do |post| %>
+<div class="card m-2" style="width: 18rem;">
+   
+  <div class="card-body">
+    <h5 class="card-title">Posts</h5><hr>
+    <div id="posts">
+   
+    <%= render post %>
+    <p>
+      <%= link_to "Show this post", post, class: "btn btn-success" %>
+    </p>
+ 
+</div>
+  </div>
+</div>
+ <% end %>
+
+ <div>
+  <h4>Import The Data</h4>
+  <%= form_with url: import_posts_path, method: :post do |form| %>
+    <%= form.file_field :file, accept: ".csv" %>
+    <%= form.button "Import CSV"%>
+  <%end%>
+</div>
