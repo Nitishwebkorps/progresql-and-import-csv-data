@@ -29,6 +29,9 @@ class PostsController < ApplicationController
   def sort 
   end
 
+  def rast
+  end
+
   # GET /posts/new
   def new
     @post = Post.new
