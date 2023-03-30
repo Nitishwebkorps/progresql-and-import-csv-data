@@ -73,3 +73,4 @@ group :test do
 end
 
 gem 'csv'
+gem "will_paginate", "~> 3.0"

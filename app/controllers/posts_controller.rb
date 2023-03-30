@@ -4,7 +4,8 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    
+    @posts = Post.paginate(page: params[:page])
   end
 
   def import
@@ -23,6 +24,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+  end
+
+  def sort 
   end
 
   # GET /posts/new
